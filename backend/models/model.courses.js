@@ -28,11 +28,13 @@ const courseSchema = new mongoose.Schema({
   },
   days: [
     {
-      day: Number,
-      title,
-      videoUrl,
-      description,
-      bulletPoints: [String]
-    }
-  ]
+      day: { type: Number, min: 1, required: true },
+      title: { type: String, required: true },
+      videoUrl: { type: String, required: true },
+      description: { type: String, required: true },
+      bulletPoints: [{ type: String }],
+    },
+  ],
 });
+
+const Course = mongoose.model('course', courseSchema);
