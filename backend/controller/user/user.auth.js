@@ -1,5 +1,4 @@
 import { User } from "./user.model.js";
-import { userAuthenticate } from "../../lock/userMiddleware.js";
 import bcrypt from "bcryptjs";
 import { generateTokenUser } from "../../lock/token.js";
 

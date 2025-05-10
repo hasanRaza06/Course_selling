@@ -27,7 +27,7 @@ const adminSchema=new mongoose.Schema({
         type:String,
         required:true,
         enum:['super','admin'],
-        default:'user'
+        default:'admin'
     },
     publishedCourses:[{
         type:mongoose.Schema.Types.ObjectId,

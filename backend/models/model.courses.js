@@ -5,6 +5,7 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    unique:true
   },
   description: {
     type: String,
@@ -21,6 +22,10 @@ const courseSchema = new mongoose.Schema({
     required: true,
     trim:true
   },
+  status:{
+    type:Boolean,
+    default:true
+  },
   sellerId:{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'admin',
@@ -33,8 +38,9 @@ const courseSchema = new mongoose.Schema({
       videoUrl: { type: String, required: true },
       description: { type: String, required: true },
       bulletPoints: [{ type: String }],
+      status:{type:Boolean,default:true}
     },
   ],
 });
 
-const Course = mongoose.model('course', courseSchema);
+export const Course = mongoose.model('course', courseSchema);
